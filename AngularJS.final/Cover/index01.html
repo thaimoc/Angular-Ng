@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo AngularJS</title>
+    <link rel="stylesheet" href="../Libs/bootstrap-3.3.6-dist/css/bootstrap.css">
+    <script src="../Libs/angular-1.5.0-rc.0/angular.js"></script>
+
+    <style>
+        body{
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        angular.module("app", [])
+                .controller("FirstCtrl", function(){
+                    var first = this;
+
+                    first.greeting = "First";
+                });
+    </script>
+</head>
+<body ng-controller="FirstCtrl as first">
+
+    <input type="text" ng-model="first.greeting"> <br>
+
+    <div ng-class="first.greeting">
+        {{first.greeting}} {{"World!"}}
+    </div>
+</body>
+</html>

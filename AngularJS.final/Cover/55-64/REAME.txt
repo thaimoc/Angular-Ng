@@ -1,0 +1,13 @@
+This section is just for expert developer so I don't want to show them.
+Because if you want to learn them you will add so more font-end developer skills
+like expressJS, requiredJS, bowerJs, unit test in angular,... Therefore you can search
+them on the internets.
+
+In next section I will show angularJS skill just for profession developer.
+
+Note:   + AngularJS is easy way to learn and easy way to code than Jquery.
+        + In this course I've just cover a course, which is a course if you want to
+          learn in normal way you must pay so much money for it. And I don't want to
+          show that course because if I do that I will be a bad guy with the author.
+
+By: Von 12-23-2015

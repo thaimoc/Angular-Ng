@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The best way to accessing data in html</title>
+    <link rel="stylesheet" href="../../Libs/bootstrap-3.3.6-dist/css/bootstrap.css">
+</head>
+<!--<body ng-app="app">-->
+<body ng-app="app" ng-controller="TodoCtrl as todoCtrl">
+
+<!--<div ng-repeat="todo in todos">-->
+<!--<div ng-repeat="todo in TodoService.todos">-->
+<!--<div ng-repeat="todo in todoCtrl.TodoService.todos">-->
+<div ng-repeat="todo in todoCtrl.todos">
+    {{ todo.item }}
+</div>
+
+<form>
+    <input class="input-sm" type="text" ng-model="newTodo">
+    <!--<input class="btn btn-primary" type="submit" ng-click="todos.push({item:newTodo, done:false})">-->
+    <!--<input class="btn btn-primary" type="submit" ng-click="TodoService.addTodo(newTodo)">-->
+    <!--<input class="btn btn-primary" type="submit" ng-click="todoCtrl.TodoService.addTodo(newTodo)">-->
+    <input class="btn btn-primary" type="submit" ng-click="todoCtrl.addTodo(newTodo)">
+</form>
+
+<script src="../../Libs/angular-1.5.0-rc.0/angular.js"></script>
+<script src="js/app-promises.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Router UI Named With Views</title>
+    <link rel="stylesheet" href="../../Libs/bootstrap-3.3.6-dist/css/bootstrap.css">
+</head>
+<body ng-app="ui-router-named-views">
+
+<website-banner title="ui-router named views"></website-banner>
+
+<div class="container">
+
+    <!--Header-->
+    <div class="row" ui-view="header"></div>
+
+    <div class="row">
+        <!--Sidebar/Nav-->
+        <div class="col-xs-3" ui-view="sidebar"></div>
+
+        <!--Content-->
+        <div class="col-xs-9" ui-view="content"></div>
+    </div>
+
+    <div class="row" ui-view="footer"></div>
+
+</div>
+
+<script src="../../Libs/angular-1.5.0-rc.0/angular.js"></script>
+<script src="../../Libs/vendor/angular-ui-router.min.js"></script>
+
+<script src="common/directives/blink/blink.js"></script>
+<script src="common/directives/banner/website-banner.js"></script>
+
+<script src="app/alt-one/alt-one.js"></script>
+<script src="app/alt-two/alt-two.js"></script>
+<script src="app/alt-three/alt-three.js"></script>
+<script src="app/app.js"></script>
+
+</body>
+</html>

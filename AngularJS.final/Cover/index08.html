@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Tutorials</title>
+    <link rel="stylesheet" href="../Libs/bootstrap-3.3.6-dist/css/bootstrap.css">
+</head>
+<body>
+    <div ng-app="myApp">
+
+        <div ng-controller="AvengersCtrl">
+            <input type="text" ng-model="search.$" class="input-sm col-lg-4">
+            <input type="text" ng-model="search.name" class="input-sm col-lg-4">
+            <input type="text" ng-model="search.character" class="input-sm col-lg-4">
+            <table class="table table-responsive">
+                <!--<tr ng-repeat="actor in avengers.cast  | filter:search | orderBy:'name' | limitTo:5">-->
+                <tr ng-repeat="actor in avengers.cast  | filter:search | orderBy:'-name' | limitTo:5">
+                    <td>{{actor.name | lowercase}}</td>
+                    <td>{{actor.character | uppercase}}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="../Libs/angular-1.5.0-rc.0/angular.js"></script>
+    <script src="js/main08.js"></script>
+</body>
+</html>

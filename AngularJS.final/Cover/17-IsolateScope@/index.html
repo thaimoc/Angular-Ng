@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Isolate Scope with @</title>
+</head>
+<body>
+
+<div ng-app="drinkApp">
+    <div ng-controller="AppCtrl">
+        <input type="text" ng-model="ctrlFlavor">
+        <div drink flavor="{{ctrlFlavor}}"></div>
+    </div>
+</div>
+
+<script src="../../Libs/angular-1.5.0-rc.0/angular.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

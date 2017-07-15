@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Refactor flexible directives</title>
+    <link rel="stylesheet" href="../../Libs/bootstrap-3.3.6-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body ng-app="gemStore" ng-controller="StoreController as storeVm">
+
+<!-- Store Header -->
+<header>
+    <h1 class="text-center">Flatlander Crafted Gems</h1>
+    <h2 class="text-center">- an Angular store -</h2>
+</header>
+
+<!-- Products Container -->
+<div class="list-group">
+
+    <!-- Product Container -->
+    <div class="list-group-item" ng-repeat="product in storeVm.products | orderBy:'-price'">
+
+        <!-- $index Practice: -->
+        <h3>Gem #{{ $index + 1 }}: {{ product.name | uppercase }}
+            <em class="pull-right" >{{ product.price | currency }}</em>
+        </h3>
+
+        <!-- Image Gallery -->
+        <div ng-show="product.images.length" ng-controller="GalleryController as gallery">
+            <div class="img-wrap">
+                <img ng-src="{{ product.images[gallery.imageIndex] }}" class="img-thumbnail center-block" />
+            </div>
+            <ul class="img-thumbnails clearfix">
+                <li class="small-image pull-left thumbnail" ng-repeat="image in product.images" ng-click="gallery.currentImageChange($index)">
+                    <img ng-src="{{ image }}">
+                </li>
+            </ul>
+        </div>
+
+        <!-- Tab Navigation an Contents -->
+        <tabgroup>
+            <tab title="Description">
+                <product-description item="product" ></product-description>
+            </tab>
+            <tab title="Specs">
+                <product-specs item="product"></product-specs>
+            </tab>
+            <tab title="Reviews">
+                <product-reviews item="product"></product-reviews>
+            </tab>
+        </tabgroup>
+
+    </div>
+
+</div>
+
+<script src="../../Libs/angular-1.5.0-rc.0/angular.js"></script>
+<script src="js/products.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

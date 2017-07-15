@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo for $templateCache</title>
+    <link rel="stylesheet" href="../../Libs/foundation-5.5.3/css/foundation.css">
+</head>
+<body>
+
+<div ng-app="app">
+
+    <!--&lt;!&ndash; The first solution is : template:$templateCache.get("zippy.html")&ndash;&gt;-->
+    <!--<script type="text/ng-template" id="zippy.html">-->
+        <!--<div>-->
+            <!--<h3 ng-click="toggleContent()">{{title}}</h3>-->
+            <!--<div ng-show="isContentVisible" ng-transclude></div>-->
+        <!--</div>-->
+    <!--</script>-->
+
+    <input type="text" ng-model="model.title">
+    <input type="text" ng-model="model.content">
+
+    <zippy title="{{model.title}}">
+        The content is: {{model.content}}
+    </zippy>
+
+</div>
+
+<script src="../../Libs/angular-1.5.0-rc.0/angular.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

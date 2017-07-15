@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Localization</title>
+    <link rel="stylesheet" href="../../Libs/bootstrap-3.3.6-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body ng-app="app" ng-controller="AnimalCtrl as ctrl">
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <form role="form" class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Please translate this page into: </label>
+
+                    <div class="col-xs-2">
+                        <select class="form-control"
+                                ng-model="ctrl.language"
+                                ng-options="lang.label for lang in ctrl.supportedLanguages"
+                                ng-change="ctrl.updateLocale(ctrl.language)"
+                        ></select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row"
+        ng-repeat="animal in ctrl.animals"
+    >
+        <div class="col-xs-3"><img ng-src="{{animal.img}}" alt=""></div>
+        <div class="col-xs-9"><h2 i18n="{{animal.code}}"></h2></div>
+    </div>
+</div>
+
+<script src="../../Libs/vendor/lodash.js"></script>
+<script src="../../Libs/angular-1.5.0-rc.0/angular.js"></script>
+<script src="../../Libs/angular-1.5.0-rc.0/angular-sanitize.js"></script>
+<script src="../../Libs/bower-angular-sanitize-master/angular-sanitize.js"></script>
+<script src="../../Libs/angular-localization-master/dist/angular-localization.js"></script>
+<script src="app/app.js"></script>
+<script src="app/controllers/animal.js"></script>
+
+</body>
+</html>

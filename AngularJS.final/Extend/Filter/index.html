@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter </title>
+</head>
+<body ng-app="myApp" ng-controller="Filter">
+    <div>
+        {{ text | clean: '+' }}
+    </div>
+
+    <script src="../../Libs/angular-1.5.0-rc.0/angular.js"></script>
+    <script>
+        angular.module('myApp', [])
+                .filter('clean', function(){
+                    return function (input, separator){
+                        var filter = new RegExp('[^a-z0-9' + (separator || '-') + ']', 'ig');
+                        return input.toLowerCase()
+                                .replace(/\s+/g, (separator || '-'))
+                                .replace(filter, '');
+                    }
+                })
+                .controller('Filter', function($scope){
+                    $scope.text = 'Hello world, this is some text!';
+                });
+    </script>
+</body>
+</html>

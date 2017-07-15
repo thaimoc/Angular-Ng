@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Copy</title>
+    <link rel="stylesheet" href="../../Libs/foundation-5.5.3/css/foundation.css">
+</head>
+<body ng-app="app" ng-controller="AppCtrl as app">
+
+<form>
+    <input type="text" ng-model="app.contactCopy.firstName">
+    <buinpu ng-click="app.saveContact()" >Save</button>
+</form>
+
+<div class="div" style="margin-top: 40px;"></div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>First</td>
+            <td>Last</td>
+            <td>Phone</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="contact in app.contacts" ng-click="app.selectContact(contact)">
+            <td>{{ contact.firstName }}</td>
+            <td>{{ contact.lastName }}</td>
+            <td>{{ contact.phone }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<script src="../../Libs/angular-1.5.0-rc.0/angular.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

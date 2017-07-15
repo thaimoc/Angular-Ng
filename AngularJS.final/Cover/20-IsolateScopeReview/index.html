@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Isolate Scope Review</title>
+    <link rel="stylesheet" href="../../Libs/bootstrap-3.3.6-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../Libs/bootstrap-3.3.6-dist/css/bootstrap-theme.css">
+</head>
+<body>
+
+    <div ng-app="phoneApp">
+
+        <div ng-controller="AppCtrl">
+            <label>Isolate scope with @</label>
+            <phone number="555-1234" network="network" make-call="leaveVoiceMail(number, message)"></phone>
+
+            <label>Isolate scope with =</label>
+            <phone number="867-5309" network="network" make-call="leaveVoiceMail(number, message)"></phone>
+
+            <label>Isolate scope with &</label>
+            <phone number="911" network="network" make-call="leaveVoiceMail(number, message)"></phone>
+        </div>
+
+    </div>
+
+<script src="../../Libs/angular-1.5.0-rc.0/angular.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

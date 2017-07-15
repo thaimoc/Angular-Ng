@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../../Libs/bootstrap-3.3.6-dist/css/bootstrap.css">
+
+    <script src="../../Libs/vendor/moment.js"></script>
+    <script src="../../Libs/vendor/tinycolor-min.js"></script>
+    <script src="../../Libs/greensock-js/uncompressed/TweenMax.js"></script>
+    <script src="../../Libs/angular-1.5.0-rc.0/angular.js"></script>
+    <script src="app.js"></script>
+
+    <style>
+        .well{
+            border:30px solid black;
+        }
+    </style>
+
+</head>
+<body ng-app="demo" class="container">
+
+<div class="well" ng-controller="OuterCtrl as outer">
+<h2>Outer {{ time | heavy}}</h2>
+
+    <div class="well" ng-controller="MiddleCtrl as middle">
+        <h2>Middle {{ time }}</h2>
+
+        <div class="well" ng-controller="InnerCtrl as inner">
+            <h2>Inner {{ time }}</h2>
+
+
+            <digest-button></digest-button>
+            <apply-button></apply-button>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

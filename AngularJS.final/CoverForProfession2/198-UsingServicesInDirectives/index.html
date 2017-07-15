@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Using Angular Services in Angular Directives</title>
+
+    <link rel="stylesheet" href="../../Libs/bootstrap-3.3.6-dist/css/bootstrap.css">
+    <script src="../../Libs/angular-1.5.0-rc.0/angular.js"></script>
+    <script src="../../Libs/vendor/angular-ui-router.min.js"></script>
+    <script src="../../Libs/bootstrap-bower-master/ui-bootstrap.js"></script>
+    <script src="../../Libs/bootstrap-bower-master/ui-bootstrap-tpls.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body ng-app="app" ng-controller="AppCtrl as app">
+
+<app-alert></app-alert>
+
+<button ng-click="app.somethingFailed()">Something Failed</button>
+
+</body>
+</html>

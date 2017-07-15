@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo for $resource for data model</title>
+    <link rel="stylesheet" href="../../Libs/bootstrap-3.3.6-dist/css/bootstrap.css">
+</head>
+<body ng-app="app" ng-controller="MainCtrl">
+
+<div class="container">
+    <h1 ng-show="posts.length">Posts</h1>
+    <table class="table table-striped" ng-show="posts.length">
+        <thead>
+            <th>Title</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="post in posts">
+                <td ng-click="activePost(post)">{{ post.title }}</td>
+                <td><button class="btn btn-danger" ng-click="delete(post)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 ng-if="!editing">New Post</h3>
+    <h3 ng-if="editing">Edit Post</h3>
+
+    <form ng-submit="save(post)">
+        <input type="text" ng-model="post.title">
+        <button type="submit" class="btn btn-primary">Sumit</button>
+    </form>
+
+</div>
+
+<script src="../../Libs/angular-1.5.0-rc.0/angular.js"></script>
+<script src="../../Libs/angular-1.5.0-rc.0/angular-resource.js"></script>
+<script src="../../Libs/angular-1.5.0-rc.0/angular-route.js"></script>
+
+<script src="../../Libs/vendor/lodash.js"></script>
+<script src="script/models/post.js"></script>
+<script src="script/controllers/main.js"></script>
+<script src="script/app.js"></script>
+
+</body>
+</html>

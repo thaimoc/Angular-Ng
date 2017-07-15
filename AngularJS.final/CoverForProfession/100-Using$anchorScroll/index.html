@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Using $anchorScroll</title>
+</head>
+<body ng-app="app" ng-controller="AppCtrl as app">
+
+<a ng-click="app.goToAnchor(elm)" ng-repeat="elm in app.elms">{{ elm }}</a>
+<div id="{{ elm }}" ng-style="app.createStyle($index)" ng-repeat="elm in app.elms">
+    {{ elm }}
+</div>
+
+<script src="../../Libs/vendor/tinycolor-min.js"></script>
+<script src="../../Libs/angular-1.5.0-rc.0/angular.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

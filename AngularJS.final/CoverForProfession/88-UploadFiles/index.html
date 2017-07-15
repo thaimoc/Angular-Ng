@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular file upload</title>
+    <link rel="stylesheet" href="../../Libs/foundation-5.5.3/css/foundation.css">
+</head>
+<body ng-app="app" ng-controller="uploadCtrl">
+
+<form class="panel">
+    <input type="file" file-input="files" multiple>
+    <button ng-click="upload()">Upload</button>
+    <dl ng-show="files.length > 0">
+        <dd ng-repeat="file in files">{{ file.name }}</dd>
+    </dl>
+</form>
+
+<script src="../../Libs/angular-1.5.0-rc.0/angular.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

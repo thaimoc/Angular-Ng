@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>What's new in Angular 1.3</title>
+    <script src="../../Libs/angular-1.5.0-rc.0/angular.js"></script>
+    <script src="../../Libs/angular-1.5.0-rc.0/angular-messages.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body ng-app="app" ng-controller="MainCtrl as vm">
+<h1>Angular {{vm.angularVersion}}</h1>
+<h2>
+    Intro to ngMessages
+    <small>by Von</small>
+</h2>
+<hr />
+
+<h2>Demo</h2>
+
+<form name="form">
+    <input type="email" name="inputField" ng-model="field" required minlength="5" />
+    <div ng-messages="form.inputField.$error" ng-messages-multiple>
+        <div ng-message="required">This field is required</div>
+        <div ng-message="minlength">Input too short</div>
+        <div ng-message="email">This field must be an email</div>
+    </div>
+</form>
+</body>
+</html>

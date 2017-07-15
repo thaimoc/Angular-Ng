@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Promises-Changing Demo</title>
+
+    <link rel="stylesheet" href="../../Libs/bootstrap-3.3.6-dist/css/bootstrap.css">
+    <script src="../../Libs/vendor/$QDecorator.js"></script>
+    <script src="../../Libs/angular-1.5.0-rc.0/angular.js"></script>
+    <script src="js/FlightServices.js"></script>
+    <script src="js/Dashboard.js"></script>
+
+    <script>
+        // Start the AngularJS engine for FlightApp
+
+        angular
+                .module('flightDemo', ['FlightServices'])
+                .controller('flightDashboard', FlightDashboard);
+    </script>
+
+</head>
+<body ng-app="flightDemo" ng-controller="flightDashboard">
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">AngularJS Promises-Changing</a>
+            <h5><span class="text-muted" class="user">Hello {{ user.email }}</span></h5>
+        </div>
+        <div id="navbar" class="navbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Quick Start</a></li>
+                <li><a href="#about">Present Orders!</a></li>
+                <li><a href="#contact">Past Orders</a></li>
+                <li><a href="#contact">My Account</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Here is your itinerary</h1>
+        <table class="table tab-content table-responsive">
+            <tr>
+                <td>Your Departure</td>
+                <td>{{ departure.date }}</td>
+            </tr>
+            <tr>
+                <td>Your Flight</td>
+                <td>{{ flight.plane.make }}</td>
+            </tr>
+            <tr>
+                <td>Weather Forecast</td>
+                <td>{{ weather.forecast }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

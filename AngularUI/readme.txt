@@ -1,0 +1,1 @@
+You must copy javascript frameworks to public folder before run it 

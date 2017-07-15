@@ -1,0 +1,10 @@
+<section>
+    <ul class="nav nav-pills">
+        <li ng-repeat="tab in tabs" ng-class="{active:tab.selected}">
+            <a href ng-click="select(tab)">{{ tab.title }}</a>
+        </li>
+    </ul>
+
+    <!-- This will ensure that the original HTML that was placed between the <tabgroup> tags will still be visible -->
+    <div ng-transclude></div>
+</section>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eggly</title>
+    <link rel="stylesheet" href="../../../Libs/bootstrap-3.3.6-dist/css/bootstrap.css">
+
+</head>
+<body ng-app="Eggly">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar" ui-view="categories"></div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ui-view="bookmarks"></div>
+        </div>
+    </div>
+
+    <script src="../../../Libs/angular-1.5.0-rc.0/angular.js"></script>
+    <script src="../../../Libs/vendor/angular-ui-router.min.js"></script>
+    <script src="../../../Libs/vendor/lodash.js"></script>
+    <script src="app/common/entities/entity-base.js"></script>
+    <script src="app/common/models/categories-model.js"></script>
+    <script src="app/common/models/bookmarks-model.js"></script>
+    <script src="app/eggly-app.complete.js"></script>
+    <script src="app/categories/categories.js"></script>
+    <script src="app/bookmarks/bookmarks.js"></script>
+    <script src="app/bookmarks/edit/bookmark-edit.js"></script>
+</body>
+</html>

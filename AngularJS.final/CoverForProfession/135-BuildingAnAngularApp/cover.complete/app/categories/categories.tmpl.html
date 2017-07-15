@@ -1,0 +1,6 @@
+<a href="#/"><img src="../assets/img/eggly-logo.png" class="logo" alt=""></a>
+<url class="nav nav-sidebar">
+    <li ng-repeat="category in categories" ng-class="{'active':isCurrentCategory(category)}"><a ui-sref="eggly.categories.bookmarks({category: category.name})">
+        {{ category.name }}
+    </a></li>
+</url>
